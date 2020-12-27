@@ -1,3 +1,9 @@
+:root {
+  --blue-black: #0a192f;
+  --ligh-grey: #ccd6f6;
+  --green: #3d9c90;
+  --green-opacity: rgb(100 255 218 / 10%);
+}
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -9,7 +15,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
+  color: var(--light-grey);
+  background-color: var(--blue-black);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
