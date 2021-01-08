@@ -1,68 +1,14 @@
 import React from "react"
-import styled from "styled-components"
-import { keyframes } from "styled-components"
+import { Link } from "react-scroll"
 
-const strokeAnim = keyframes`
-from{
-            stroke-dasharray:1120;
-            stroke-dashoffset:1120;
-            
-        }
-        to{
-           stroke-dashoffset:0; 
-            
-        }
-`
-const textAnim = keyframes`
-from{
-          fill-opacity:.3;
-            transform: scale(0)
-        }
-        to{
-           fill-opacity:1;
-            transform: scale(1)
-        };
-`
-const logoAnim = keyframes`
-0%{
-  transform:rotateX(0) scale(1)
-}
-70%{
-  transform:rotateX(0) scale(1)
-}
-100%{
-  transform:rotateX(90deg) scale(.3)
-};
-`
-const LoadingBackground = styled.div`
-  background-color: var(--blue-black);
-  min-width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  .logo-stroke {
-    stroke-dasharray: 1120;
-    stroke-dashoffset: 1120;
-    animation: ${strokeAnim} linear 2.5s forwards;
-  }
-  .logotext {
-    transform-origin: 50% 50% 0;
-    animation: ${textAnim} linear 2.5s forwards;
-  }
-  .logo {
-    animation: ${logoAnim} linear 4.5s forwards;
-  }
-`
-
-const Loading = () => {
+function MiIcon() {
   return (
-    <LoadingBackground>
+    <Link to="/">
       <svg
-        className="logo"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        width="300"
-        height="300"
+        width="42"
+        height="42"
         x="0px"
         y="0px"
         viewBox="0 0 300 300"
@@ -70,7 +16,6 @@ const Loading = () => {
         space="preserve"
       >
         <path
-          className="logo-stroke"
           fill="none"
           stroke="#48ddea"
           strokeWidth="7.7991"
@@ -79,7 +24,6 @@ const Loading = () => {
 	C5,284.5,15.5,295,28.4,295h243.2c12.9,0,23.4-10.5,23.4-23.4V28.4C295,15.5,284.5,5,271.6,5z"
         />
         <path
-          className="logotext"
           fill="#48ddea"
           d="M239.4,60.8l2.5,4.4L192,101.5c9.8,0,19.8,2.4,29.9,7.3c10.2,4.8,17.9,11.6,23.1,20.1
 		c5.2,8.6,7.8,17.6,7.8,27c0,15-5.3,29.3-15.8,43.2s-25.5,25.2-45,34.2c-19.5,9-37.8,13.4-55,13.4c-16.5,0-31.6-3.6-45.2-10.9
@@ -95,7 +39,8 @@ const Loading = () => {
 		c-11-4.5-20.8-6.7-29.3-6.7c-10.3,0-20.8,3-31.4,8.9V235.4z"
         />
       </svg>
-    </LoadingBackground>
+    </Link>
   )
 }
-export default Loading
+
+export default MiIcon

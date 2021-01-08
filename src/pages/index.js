@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import Loading from "../components/loading/Loading"
 import { useTimeout } from "ahooks"
 
+import Hero from "../components/Hero"
+
 const IndexPage = () => {
   const [isLoading, setIsLoading] = React.useState(true)
 
@@ -18,12 +20,7 @@ const IndexPage = () => {
   ) : (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>HI Its mi</p>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <h1>NEW</h1>
-      <div></div>
+      <Hero />
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
