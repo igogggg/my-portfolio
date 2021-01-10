@@ -8,6 +8,6 @@ export const Container = styled.div`
   position: relative;
   @media screen and (max-width: 768px) {
     max-width: 768px;
-    width: 95vw;
+    width: 90vw;
   }
 `

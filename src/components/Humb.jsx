@@ -10,6 +10,7 @@ const StyledHumb = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid ${props => props.border};
+  z-index: 50;
 
   /* display: none; */
   @media screen and (max-width: 765px) {
@@ -42,9 +43,9 @@ const Humb = () => {
       border={isSideBarOpen ? "var(--green)" : "transparent"}
       onClick={Open}
     >
-      <div className={`line ${isSideBarOpen && "line-first"}`}></div>
+      <div className={`${isSideBarOpen && "line-first"} line `}></div>
       <div className={isSideBarOpen ? "" : "line"}></div>
-      <div className={`line ${isSideBarOpen && "line-third"}`}></div>
+      <div className={`${isSideBarOpen && "line-third"}  line`}></div>
     </StyledHumb>
   )
 }

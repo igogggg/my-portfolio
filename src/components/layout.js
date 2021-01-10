@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./Header"
 import { PortfolioProvider } from "../context/context"
+import SideBar from "./SideBar"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -8,7 +9,7 @@ const Layout = ({ children }) => {
     <>
       <PortfolioProvider>
         <Header />
-
+        <SideBar />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear().toString()}, Built with

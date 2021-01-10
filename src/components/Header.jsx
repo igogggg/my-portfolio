@@ -38,12 +38,7 @@ const StyledHeader = styled.header`
     background-color: #48ddea;
     width: 100%;
   }
-  .show {
-    opacity: 1;
-  }
-  .hide {
-    opacity: 0;
-  }
+
   @media screen and (max-width: 960px) {
     nav {
       width: 70%;
@@ -62,7 +57,7 @@ const Header = () => {
   return (
     <StyledHeader opacity={top > 70 ? 0 : 1}>
       <Container>
-        <Flex justify="space-between" aling="center" height="100px">
+        <Flex justify="space-between" aling="center" height="80px">
           <MiIcon />
           <Flex aling="center" as="nav" justify="space-between" width="50%">
             {links.map((link, index) => (

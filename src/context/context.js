@@ -5,7 +5,7 @@ import { links } from "../mock/data"
 const PorfolioContext = React.createContext()
 
 const PortfolioProvider = ({ children }) => {
-  const [isSideBarOpen, setSideBarOpen] = React.useState(true)
+  const [isSideBarOpen, setSideBarOpen] = React.useState(false)
   const Open = () => setSideBarOpen(!isSideBarOpen)
   console.log(isSideBarOpen)
   return (
