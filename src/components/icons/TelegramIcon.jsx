@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const StyledIcon = styled.a`
+const StyledIcon = styled.div`
   svg {
     stroke: var(--litgh-grey);
     &:hover,
@@ -12,9 +12,9 @@ const StyledIcon = styled.a`
     }
   }
 `
-export const TelegramIcon = ({ link }) => {
+const TelegramIcon = () => {
   return (
-    <StyledIcon href={link}>
+    <StyledIcon>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 50 50"
@@ -47,3 +47,4 @@ export const TelegramIcon = ({ link }) => {
     </StyledIcon>
   )
 }
+export default TelegramIcon

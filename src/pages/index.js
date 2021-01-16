@@ -5,6 +5,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Loading from "../components/loading/Loading"
 import { useTimeout } from "ahooks"
+import About from "../components/About"
 
 import Hero from "../components/Hero"
 
@@ -21,6 +22,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Hero />
+      <About />
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>

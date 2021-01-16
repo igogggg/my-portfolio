@@ -3,13 +3,14 @@ import styled from "styled-components"
 import { Flex } from "./Flex"
 import { useGlobalContext } from "../context/context"
 import { Link } from "react-scroll"
+import Fade from "react-reveal/Fade"
 
 const StyledSideBar = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  width: 100%;
   background-color: black;
   opacity: 0.9;
   z-index: 10;
@@ -32,25 +33,46 @@ const StyledSideBar = styled.div`
 `
 
 const SideBar = () => {
-  const { links, Open, isSideBarOpen } = useGlobalContext()
+  const { links, Open, isSideBarOpen, social } = useGlobalContext()
   return (
     <StyledSideBar
       transform={isSideBarOpen ? "translateX(0)" : "translateX(100%)"}
     >
-      <Flex
-        direction="column"
-        padding="150px 0"
-        aling="center"
-        justify="space-between"
-        height="100%"
-        width="100%"
-      >
-        {links.map((link, index) => (
-          <Link onClick={Open} className="side-link" to={link.path} key={index}>
-            {link.text}
-          </Link>
-        ))}
-      </Flex>
+      {isSideBarOpen && (
+        <Flex
+          direction="column"
+          padding="80px 0"
+          aling="center"
+          justify="space-between"
+          height="100%"
+          width="100%"
+        >
+          {links.map((link, index) => (
+            <Fade right cascade duration={1500}>
+              <Link
+                onClick={Open}
+                className="side-link"
+                to={link.path}
+                key={index}
+              >
+                {link.text}
+              </Link>
+            </Fade>
+          ))}
+          <Flex justify="space-between" width="100%" padding="50px">
+            {social.map(({ icon, url }, index) => (
+              <Fade
+                key={index}
+                distance="150px"
+                bottom
+                duration={`${index * 4}00`}
+              >
+                <a href={url}>{icon}</a>
+              </Fade>
+            ))}
+          </Flex>
+        </Flex>
+      )}
     </StyledSideBar>
   )
 }

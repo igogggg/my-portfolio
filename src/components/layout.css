@@ -28,6 +28,7 @@
 }
 :root {
   --blue-black: #0a192f;
+  --light-blue: #172a47;
   --litgh-grey: #ccd6f6;
   --dark-grey: #afb3c0;
   --green: #48ddea;
@@ -55,6 +56,9 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+}
+main {
+  padding: 0 50px;
 }
 article,
 aside,

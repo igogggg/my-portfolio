@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext } from "react"
-import { links } from "../mock/data"
+import { links, social } from "../mock/data"
 
 const PorfolioContext = React.createContext()
 
@@ -9,7 +9,7 @@ const PortfolioProvider = ({ children }) => {
   const Open = () => setSideBarOpen(!isSideBarOpen)
   console.log(isSideBarOpen)
   return (
-    <PorfolioContext.Provider value={{ links, Open, isSideBarOpen }}>
+    <PorfolioContext.Provider value={{ links, Open, isSideBarOpen, social }}>
       {children}
     </PorfolioContext.Provider>
   )

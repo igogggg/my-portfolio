@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { useScroll } from "ahooks"
 import Humb from "./Humb"
 import { useGlobalContext } from "../context/context"
+import Fade from "react-reveal/Fade"
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -61,12 +62,14 @@ const Header = () => {
           <MiIcon />
           <Flex aling="center" as="nav" justify="space-between" width="50%">
             {links.map((link, index) => (
-              <div key={index} className="nav-link">
-                <Link to={link.path} className="link-item">
-                  {link.text}
-                </Link>
-                <span className="underline"></span>
-              </div>
+              <Fade right top>
+                <div key={index} className="nav-link">
+                  <Link to={link.path} className="link-item">
+                    {link.text}
+                  </Link>
+                  <span className="underline"></span>
+                </div>
+              </Fade>
             ))}
           </Flex>
           <Humb />
