@@ -8,5 +8,6 @@ export const Flex = styled.div`
   width: ${props => props.width};
   min-height: ${props => props.height};
   padding: ${props => props.padding};
-  position: relative;
+  flex-wrap: wrap;
+  margin: ${props => props.margin};
 `

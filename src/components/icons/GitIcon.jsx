@@ -2,12 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledIcon = styled.div`
+  width: 26px;
+  height: 26px;
   svg {
     stroke: var(--litgh-grey);
     &:hover,
     &:active {
       stroke: var(--green);
-      transform: translateX(3px);
+      transform: translateX(2px);
       transition: all linear.25s;
     }
   }

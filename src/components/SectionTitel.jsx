@@ -9,6 +9,7 @@ const StyledTitel = styled.h2`
   font-weight: 600;
   white-space: nowrap;
   margin-left: 20px;
+  margin-bottom: 80px;
   ::after {
     content: "";
     width: 200px;
@@ -16,7 +17,7 @@ const StyledTitel = styled.h2`
     background-color: var(--light-blue);
     position: absolute;
     top: 55%;
-    left: 100px;
+    left: 150px;
   }
 `
 const SectionTitel = ({ children }) => {

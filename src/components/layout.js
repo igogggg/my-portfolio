@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <PortfolioProvider>
         <Header />
         <SideBar />
-        <main>{children}</main>
+        <main style={{ padding: 0 }}>{children}</main>
         <footer>
           © {new Date().getFullYear().toString()}, Built with
           {` `}

@@ -61,16 +61,21 @@ const Header = () => {
         <Flex justify="space-between" aling="center" height="80px">
           <MiIcon />
           <Flex aling="center" as="nav" justify="space-between" width="50%">
-            {links.map((link, index) => (
-              <Fade right top>
+            <Fade top>
+              {links.map((link, index) => (
                 <div key={index} className="nav-link">
-                  <Link to={link.path} className="link-item">
+                  <Link
+                    to={link.path}
+                    smooth
+                    duration={1000}
+                    className="link-item"
+                  >
                     {link.text}
                   </Link>
                   <span className="underline"></span>
                 </div>
-              </Fade>
-            ))}
+              ))}
+            </Fade>
           </Flex>
           <Humb />
         </Flex>

@@ -47,8 +47,8 @@ const SideBar = () => {
           height="100%"
           width="100%"
         >
-          {links.map((link, index) => (
-            <Fade right cascade duration={1500}>
+          <Fade right cascade duration={1500}>
+            {links.map((link, index) => (
               <Link
                 onClick={Open}
                 className="side-link"
@@ -57,19 +57,16 @@ const SideBar = () => {
               >
                 {link.text}
               </Link>
-            </Fade>
-          ))}
-          <Flex justify="space-between" width="100%" padding="50px">
-            {social.map(({ icon, url }, index) => (
-              <Fade
-                key={index}
-                distance="150px"
-                bottom
-                duration={`${index * 4}00`}
-              >
-                <a href={url}>{icon}</a>
-              </Fade>
             ))}
+          </Fade>
+          <Flex justify="space-between" width="100%" padding="50px">
+            <Fade cascade bottom distance="150px">
+              {social.map(({ icon, url }, index) => (
+                <a key={index} href={url}>
+                  {icon}
+                </a>
+              ))}
+            </Fade>
           </Flex>
         </Flex>
       )}

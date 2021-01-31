@@ -11,8 +11,7 @@ const StyledHumb = styled.div`
   align-items: center;
   border: 1px solid ${props => props.border};
   z-index: 50;
-
-  /* display: none; */
+  display: none;
   @media screen and (max-width: 765px) {
     display: flex;
     cursor: pointer;

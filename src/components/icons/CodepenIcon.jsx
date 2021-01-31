@@ -2,8 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledIcon = styled.div`
+  width: 26px;
+  height: 26px;
+  stroke: var(--litgh-grey);
   svg {
-    stroke: var(--litgh-grey);
     &:hover,
     &:active {
       stroke: var(--green);
@@ -12,7 +14,7 @@ const StyledIcon = styled.div`
     }
   }
 `
-const CodepenIcon = () => {
+const CodepenIcon = ({ color }) => {
   return (
     <StyledIcon>
       <svg
@@ -22,6 +24,7 @@ const CodepenIcon = () => {
         height="25px"
       >
         <path
+          stroke={color}
           fill="none"
           strokeMiterlimit="10"
           strokeWidth="2"
