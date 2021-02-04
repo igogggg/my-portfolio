@@ -11,7 +11,7 @@ const TopTitel = styled.p`
   color: var(--green);
   font-size: 16px;
   font-weight: 400;
-  margin-top: 80px;
+  margin-top: 130px;
 `
 const Titel = styled.h1`
   color: var(--litgh-grey);
@@ -33,7 +33,7 @@ const SubTitel = styled.p`
   font-size: clamp(12px 5vw 20px);
   font-weight: 400;
   width: 60vw;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 `
 const Button = styled.button`
   padding: 25px 30px;

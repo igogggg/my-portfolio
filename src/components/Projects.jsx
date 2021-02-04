@@ -11,41 +11,39 @@ import styled from "styled-components"
 import { useGlobalContext } from "../context/context"
 
 const StyledCard = styled.div`
-  width: 49%;
-  margin: 1% 0;
+  width: 49.5%;
   border: 1px solid var(--light-blue);
+  border-radius: 0 0 4px 4px;
+  margin: 6px 0;
 
   .project-img {
-    position: relative;
     width: 100%;
-  }
-  .work-shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: var(--blue-shadow);
+    filter: brightness(0.5);
+    cursor: pointer;
     transition: all linear 0.25s;
     &:hover {
-      background-color: transparent;
+      filter: brightness(1);
+      transform: scale(1.05) translateY(-10px);
+      z-index: 50;
     }
   }
+
   @media screen and (max-width: 768px) {
     width: 100%;
   }
 `
 const ProjectBtn = styled.a`
   display: block;
-  max-width: 210px;
-  padding: 25px 30px;
+  max-width: 190px;
+  padding: 18px 25px;
   border: 1px solid var(--green);
   border-radius: 4px;
   color: var(--green);
   background-color: transparent;
   font-size: max(16px, 20px);
   font-weight: 400;
-  margin: 48px auto;
+  margin: 24px auto;
+  cursor: pointer;
   transition: all linear 0.25s;
   &:hover {
     background-color: rgb(100 255 218 / 10%);
@@ -81,7 +79,6 @@ const Projects = () => {
               <StyledCard key={i}>
                 <div className="project-img">
                   <Img fluid={img.node.childImageSharp.fluid} />
-                  <div className="work-shadow"></div>
                 </div>
                 <Flex
                   justify="space-between"
