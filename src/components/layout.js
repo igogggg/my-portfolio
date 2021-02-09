@@ -11,10 +11,8 @@ const Layout = ({ children }) => {
         <Header />
         <SideBar />
         <main style={{ padding: 0 }}>{children}</main>
-        <footer>
-          © {new Date().getFullYear().toString()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer className="footer">
+          Igor Goncharenko {""} © {new Date().getFullYear().toString()}
         </footer>
       </PortfolioProvider>
     </>

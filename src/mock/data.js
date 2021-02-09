@@ -10,14 +10,17 @@ export const links = [
   { text: "About", path: "about" },
   { text: "Projects", path: "projects" },
   { text: "Certificate", path: "certificate" },
-  { text: "Contacts", path: "contacts" },
+  { text: "Contact", path: "contact" },
 ]
 
 export const social = [
-  { icon: <GitIcon />, url: "#" },
-  { icon: <FacebookIcon />, url: "#" },
-  { icon: <TelegramIcon />, url: "#" },
-  { icon: <InstagramIcon />, url: "#" },
+  { icon: <GitIcon />, url: "https://igogggg.github.io" },
+  {
+    icon: <FacebookIcon />,
+    url: "https://www.facebook.com/profile.php?id=1100007950664111",
+  },
+  { icon: <TelegramIcon />, url: "https://t.me/igogggg" },
+  { icon: <InstagramIcon />, url: "goncharenko4546" },
   {
     icon: <CodepenIcon />,
     url: "https://codepen.io/igogggg/pens/public",
