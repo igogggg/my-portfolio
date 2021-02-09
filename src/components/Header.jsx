@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   left: 0;
   top: 0;
   z-index: 30;
+  box-shadow: 0px -5px 5px -5px rgba(32, 69, 97, 0.6) inset;
   opacity: ${props => props.opacity};
   transition: opacity linear 0.3s;
   .link-item {

@@ -10,11 +10,17 @@ import { Flex } from "./Flex"
 import styled from "styled-components"
 import { useGlobalContext } from "../context/context"
 
+const ProjectInner = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
 const StyledCard = styled.div`
-  width: 49.5%;
   border: 1px solid var(--light-blue);
   border-radius: 0 0 4px 4px;
-  margin: 6px 0;
 
   .project-img {
     width: 100%;
@@ -26,10 +32,6 @@ const StyledCard = styled.div`
       transform: scale(1.05) translateY(-10px);
       z-index: 50;
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
   }
 `
 const ProjectBtn = styled.a`
@@ -72,7 +74,7 @@ const Projects = () => {
     <div id="projects">
       <Section>
         <SectionTitel>Project</SectionTitel>
-        <Flex justify="space-between" height="100vh">
+        <ProjectInner>
           {projects.map(({ url, git, tech }, i) => {
             const img = data.allFile.edges[i]
             return (
@@ -99,7 +101,7 @@ const Projects = () => {
               </StyledCard>
             )
           })}
-        </Flex>
+        </ProjectInner>
         <ProjectBtn
           href="https://codepen.io/igogggg/pens/public"
           target="_blank"

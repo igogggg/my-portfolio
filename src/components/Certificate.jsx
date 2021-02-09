@@ -4,8 +4,8 @@ import SectionTitel from "./SectionTitel"
 import styled from "styled-components"
 import GeekbrainsIcon from "./icons/GeekbrainsIcon"
 import FreecodeIcon from "./icons/FreecodeIcon"
-import SertificateImg from "./SertificateImg"
-import SertificateImgFreecode from "./SertificateImgFreecode"
+import CertificateImg from "./CertificateImg"
+import CertificateImgFreecode from "./CertificateImgFreecode"
 
 const NameTitel = styled.h3`
   font-size: 24px;
@@ -16,7 +16,7 @@ const NameTitel = styled.h3`
   color: var(--litgh-grey);
   margin-top: 15px;
 `
-const SertificateInner = styled.div`
+const CertificateInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,24 +37,26 @@ const SertificateInner = styled.div`
     }
   }
 `
-const Sertificate = () => {
+const Certificate = () => {
   return (
     <Section>
-      <SectionTitel>Sertificate</SectionTitel>
-      <SertificateInner>
+      <div id="certificate">
+      <SectionTitel>Certificate</SectionTitel>
+      <CertificateInner>
         <div className="sertificate-card">
           <GeekbrainsIcon />
           <NameTitel>GeekBrains</NameTitel>
-          <SertificateImg />
+          <CertificateImg />
         </div>
         <div className="sertificate-card">
           <FreecodeIcon />
           <NameTitel>Freecodecamp</NameTitel>
-          <SertificateImgFreecode />
+          <CertificateImgFreecode />
         </div>
-      </SertificateInner>
+      </CertificateInner>
+      </div>
     </Section>
   )
 }
 
-export default Sertificate
+export default Certificate

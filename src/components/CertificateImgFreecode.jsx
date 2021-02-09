@@ -24,10 +24,10 @@ const ImgWrap = styled.div`
   }
 `
 
-const SertificateImg = () => {
-  const geekdata = useStaticQuery(graphql`
+const CertificateImgFreecode = () => {
+  const freedata = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "geekbrains" } }) {
+      allFile(filter: { relativeDirectory: { eq: "freecode" } }) {
         edges {
           node {
             childImageSharp {
@@ -41,15 +41,15 @@ const SertificateImg = () => {
     }
   `)
 
-  const geekimgs = geekdata.allFile.edges
+  const freeimgs = freedata.allFile.edges
 
   return (
     <ImgWrap>
-      {geekimgs.map(img => (
-        <Img className="img-filter" fluid={img.node.childImageSharp.fluid} />
+      {freeimgs.map((img,i) => (
+        <Img key={i} className="img-filter" fluid={img.node.childImageSharp.fluid} />
       ))}
     </ImgWrap>
   )
 }
 
-export default SertificateImg
+export default CertificateImgFreecode
