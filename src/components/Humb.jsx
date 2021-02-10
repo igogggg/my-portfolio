@@ -10,7 +10,7 @@ const StyledHumb = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid ${props => props.border};
-  z-index: 50;
+  z-index: 60;
   display: none;
   @media screen and (max-width: 765px) {
     display: flex;
@@ -22,7 +22,7 @@ const StyledHumb = styled.div`
     background-color: var(--litgh-grey);
     transition: all linear 0.25s;
   }
-  ${StyledHumb}:hover .line {
+  &:hover .line {
     background-color: var(--green);
   }
 

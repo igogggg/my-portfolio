@@ -47,15 +47,15 @@ const SubmintBtn = styled.button`
   }
 `
 const Contact = () => {
-  const [form, setForm] = React.useState({
+  const [state, setState] = React.useState({
     username: "",
     email: "",
     message: "",
   })
 
   const updateField = e => {
-    setForm({
-      ...form,
+    setState({
+      ...state,
       [e.target.name]: e.target.value,
     })
   }
@@ -100,7 +100,7 @@ const Contact = () => {
             type="text"
             placeholder="Your Name"
             name="username"
-            value={form.username}
+            value={state.username}
             onChange={updateField}
           />
           <label htmlFor="email">Your Email</label>
@@ -109,7 +109,7 @@ const Contact = () => {
             type="email"
             placeholder="Email Address"
             name="email"
-            value={form.email}
+            value={state.email}
             onChange={updateField}
           />
           <label htmlFor="email">Your Message</label>
@@ -119,7 +119,7 @@ const Contact = () => {
             name="text"
             placeholder="Your Message"
             name="message"
-            value={form.message}
+            value={state.message}
             onChange={updateField}
           />
           <SubmintBtn type="submit">Submint</SubmintBtn>

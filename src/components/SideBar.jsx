@@ -11,7 +11,7 @@ const StyledSideBar = styled.div`
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: black;
+  background-color: var(--blue-black);
   opacity: 0.9;
   z-index: 10;
   transition: all linear 0.3s;
@@ -28,7 +28,6 @@ const StyledSideBar = styled.div`
   .side-link:hover {
     cursor: pointer;
     color: var(--green);
-    background-color: #1d1b1b;
   }
 `
 

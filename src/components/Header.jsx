@@ -4,7 +4,7 @@ import { Container } from "./Container"
 import { Flex } from "./Flex"
 import MiIcon from "./icons/MiIcon"
 import styled from "styled-components"
-import { useScroll } from "ahooks"
+import useScroll from "./useScroll"
 import Humb from "./Humb"
 import { useGlobalContext } from "../context/context"
 import Fade from "react-reveal/Fade"
@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   left: 0;
   top: 0;
   z-index: 30;
+  background-color: var(--blue-black);
   box-shadow: 0px 0px 21px 0px rgba(32, 69, 97, 0.6) inset;
   opacity: ${props => props.opacity};
   transition: opacity linear 0.3s;
@@ -55,9 +56,22 @@ const StyledHeader = styled.header`
 
 const Header = () => {
   const { links, Open } = useGlobalContext()
-  const { top } = useScroll(document)
+  const scrollDirection = useScroll("down")
+  const [scrolledToTop, setScrolledToTop] = React.useState(false)
+  console.log(scrollDirection, scrolledToTop)
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset > 70)
+  }
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
-    <StyledHeader opacity={top > 70 ? 0 : 1}>
+    <StyledHeader opacity={scrolledToTop && scrollDirection === "down" ? 0 : 1}>
       <Container>
         <Flex justify="space-between" aling="center" height="80px">
           <MiIcon />

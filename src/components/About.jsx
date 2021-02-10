@@ -31,7 +31,7 @@ const InnerAbout = styled.div`
     margin-top: auto;
     border-radius: 30px;
     border: 2px solid var(--green-opacity);
-    z-index: 50;
+    z-index: 10;
   }
   .about-img-col {
     width: 40%;
