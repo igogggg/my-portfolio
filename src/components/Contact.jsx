@@ -46,31 +46,40 @@ const SubmintBtn = styled.button`
     background-color: rgb(100 255 218 / 10%);
   }
 `
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const Contact = () => {
-  const [state, setState] = React.useState({
-    username: "",
+  const [inputData, setInputData] = React.useState({
+    name: "",
     email: "",
     message: "",
   })
 
-  const updateField = e => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    })
+  const handleChange = e => {
+    const { name, value } = e.target
+    setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
   }
+
   const handleSubmit = e => {
     e.preventDefault()
-    const form = e.target
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
+        "form-name": "contact",
+        ...inputData,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(res => {
+        console.log("form res ", res)
+        setOpenForm(false)
+        setSuccessMessage(true)
+      })
       .catch(error => alert(error))
   }
 
@@ -81,18 +90,12 @@ const Contact = () => {
         <ContactForm
           name="contact"
           method="post"
-          action="/thanks/"
+          onSubmit={handleSubmit}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" onChange={updateField} />
-            </label>
-          </p>
+          <input type="hidden" name="bot-field" />
           <h3>Get in touch</h3>
           <label htmlFor="name">Your Name</label>
           <input
@@ -100,8 +103,9 @@ const Contact = () => {
             type="text"
             placeholder="Your Name"
             name="username"
-            value={state.username}
-            onChange={updateField}
+            value={inputData.name}
+            onChange={handleChange}
+            required
           />
           <label htmlFor="email">Your Email</label>
           <input
@@ -109,8 +113,9 @@ const Contact = () => {
             type="email"
             placeholder="Email Address"
             name="email"
-            value={state.email}
-            onChange={updateField}
+            value={inputData.email}
+            onChange={handleChange}
+            required
           />
           <label htmlFor="email">Your Message</label>
           <textarea
@@ -119,8 +124,9 @@ const Contact = () => {
             name="text"
             placeholder="Your Message"
             name="message"
-            value={state.message}
-            onChange={updateField}
+            value={inputData.message}
+            onChange={handleChange}
+            required
           />
           <SubmintBtn type="submit">Submint</SubmintBtn>
         </ContactForm>
