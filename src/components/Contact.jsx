@@ -102,7 +102,7 @@ const Contact = () => {
             id="name"
             type="text"
             placeholder="Your Name"
-            name="username"
+            name="name"
             value={inputData.name}
             onChange={handleChange}
             required
