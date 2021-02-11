@@ -47,39 +47,39 @@ const SubmintBtn = styled.button`
   }
 `
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+// function encode(data) {
+//   return Object.keys(data)
+//     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//     .join("&")
+// }
 
 const Contact = () => {
-  const [inputData, setInputData] = React.useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+  // const [inputData, setInputData] = React.useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // })
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
-  }
+  // const handleChange = e => {
+  //   const { name, value } = e.target
+  //   setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
+  // }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        ...inputData,
-      }),
-    })
-      .then(res => {
-        console.log("form res ", res)
-      })
-      .catch(error => alert(error))
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: encode({
+  //       "form-name": "contact",
+  //       ...inputData,
+  //     }),
+  //   })
+  //     .then(res => {
+  //       console.log("form res ", res)
+  //     })
+  //     .catch(error => alert(error))
+  // }
 
   return (
     <Section>
@@ -88,7 +88,7 @@ const Contact = () => {
         <ContactForm
           name="contact"
           method="post"
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
@@ -101,8 +101,8 @@ const Contact = () => {
             type="text"
             placeholder="Your Name"
             name="name"
-            value={inputData.name}
-            onChange={handleChange}
+            // value={inputData.name}
+            // onChange={handleChange}
             required
           />
           <label htmlFor="email">Your Email</label>
@@ -111,8 +111,8 @@ const Contact = () => {
             type="email"
             placeholder="Email Address"
             name="email"
-            value={inputData.email}
-            onChange={handleChange}
+            // value={inputData.email}
+            // onChange={handleChange}
             required
           />
           <label htmlFor="email">Your Message</label>
@@ -122,8 +122,8 @@ const Contact = () => {
             name="text"
             placeholder="Your Message"
             name="message"
-            value={inputData.message}
-            onChange={handleChange}
+            // value={inputData.message}
+            // onChange={handleChange}
             required
           />
           <SubmintBtn type="submit">Submint</SubmintBtn>
