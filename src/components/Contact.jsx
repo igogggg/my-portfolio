@@ -77,8 +77,6 @@ const Contact = () => {
     })
       .then(res => {
         console.log("form res ", res)
-        setOpenForm(false)
-        setSuccessMessage(true)
       })
       .catch(error => alert(error))
   }
