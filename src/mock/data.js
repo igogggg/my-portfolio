@@ -14,13 +14,13 @@ export const links = [
 ]
 
 export const social = [
-  { icon: <GitIcon />, url: "https://igogggg.github.io" },
+  { icon: <GitIcon />, url: "https://github.com/igogggg" },
   {
     icon: <FacebookIcon />,
     url: "https://www.facebook.com/profile.php?id=1100007950664111",
   },
   { icon: <TelegramIcon />, url: "https://t.me/igogggg" },
-  { icon: <InstagramIcon />, url: "goncharenko4546" },
+  { icon: <InstagramIcon />, url: "https://www.instagram.com/goncharenko4546" },
   {
     icon: <CodepenIcon />,
     url: "https://codepen.io/igogggg/pens/public",

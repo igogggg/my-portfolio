@@ -1,6 +1,7 @@
 import React from "react"
 import Section from "./Section"
 import SectionTitel from "./SectionTitel"
+import { ValidationError, useForm } from "@formspree/react"
 import styled from "styled-components"
 
 const ContactForm = styled.form`
@@ -46,54 +47,30 @@ const SubmintBtn = styled.button`
     background-color: rgb(100 255 218 / 10%);
   }
 `
-
-// function encode(data) {
-//   return Object.keys(data)
-//     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//     .join("&")
-// }
+const Thank = styled.div`
+  margin: 0 auto;
+  width: 70%;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--dark-grey);
+  margin-bottom: 36px;
+`
 
 const Contact = () => {
-  // const [inputData, setInputData] = React.useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // })
-
-  // const handleChange = e => {
-  //   const { name, value } = e.target
-  //   setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
-  // }
-
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({
-  //       "form-name": "contact",
-  //       ...inputData,
-  //     }),
-  //   })
-  //     .then(res => {
-  //       console.log("form res ", res)
-  //     })
-  //     .catch(error => alert(error))
-  // }
-
+  const [state, handleSubmit] = useForm("xnqoyapp")
+  if (state.succeeded) {
+    return <Thank>Thank you for your messege!</Thank>
+  }
   return (
     <Section>
       <div id="contact">
         <SectionTitel>Contact</SectionTitel>
-        <ContactForm
-          name="contact"
-          method="post"
-          // onSubmit={handleSubmit}
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="bot-field" />
+
+        <ContactForm name="contact" onSubmit={handleSubmit}>
           <h3>Get in touch</h3>
           <label htmlFor="name">Your Name</label>
           <input
@@ -101,32 +78,29 @@ const Contact = () => {
             type="text"
             placeholder="Your Name"
             name="name"
-            // value={inputData.name}
-            // onChange={handleChange}
             required
           />
           <label htmlFor="email">Your Email</label>
           <input
             id="email"
+            name="email"
             type="email"
             placeholder="Email Address"
-            name="email"
-            // value={inputData.email}
-            // onChange={handleChange}
             required
           />
+          <ValidationError field="email" prefix="Email" errors={state.errors} />
           <label htmlFor="email">Your Message</label>
           <textarea
             rows="10"
             cols="45"
-            name="text"
+            name="messege"
             placeholder="Your Message"
             name="message"
-            // value={inputData.message}
-            // onChange={handleChange}
             required
           />
-          <SubmintBtn type="submit">Submint</SubmintBtn>
+          <SubmintBtn type="submit" disabled={state.submitting}>
+            Submint
+          </SubmintBtn>
         </ContactForm>
       </div>
     </Section>

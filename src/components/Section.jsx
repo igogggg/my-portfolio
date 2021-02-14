@@ -5,10 +5,10 @@ const StyledSection = styled.section`
   margin: 0 auto;
   max-width: 1200px;
   min-height: 100vh;
-  padding: 30px 25px 25px;
+  padding: 10px 20px;
   @media screen and (max-width: 768px) {
     max-width: 768px;
-    padding: 50px 20px;
+    padding: 10px 16px;
   }
 `
 

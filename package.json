@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Igor Goncharenko",
   "dependencies": {
+    "@formspree/react": "^2.2.3",
     "ahooks": "^2.9.2",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",

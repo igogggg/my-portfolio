@@ -58,7 +58,6 @@ const Header = () => {
   const { links, Open } = useGlobalContext()
   const scrollDirection = useScroll("down")
   const [scrolledToTop, setScrolledToTop] = React.useState(false)
-  console.log(scrollDirection, scrolledToTop)
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset > 70)

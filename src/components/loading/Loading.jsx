@@ -38,6 +38,7 @@ const LoadingBackground = styled.div`
   background-color: var(--blue-black);
   min-width: 100vw;
   min-height: 100vh;
+  margin: 0 auto;
   display: grid;
   place-content: center;
   .logo-stroke {
