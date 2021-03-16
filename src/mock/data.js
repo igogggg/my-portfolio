@@ -27,7 +27,7 @@ export const social = [
   },
 ]
 
-export const skills = ["Html", "Css", "Javascript", "React", "Gatsby", "Next"]
+export const skills = ["Html", "Css", "Javascript", "React", "Gatsby"]
 
 export const projects = [
   { url: "https://igogggg.github.io/velo/", git: "git", tech: "Html Css " },

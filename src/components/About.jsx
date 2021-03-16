@@ -17,6 +17,7 @@ const InnerAbout = styled.div`
   color: var(--litgh-grey);
   font-size: 20px;
   font-weight: 400;
+  margin-bottom: 20px;
   .about-text-block {
     display: flex;
     flex-direction: column;
@@ -78,11 +79,13 @@ const StyledSkills = styled.div`
   display: flex;
   flex-direction: space-between;
   align-items: center;
-  margin: 16px 0;
   border-bottom: 1px solid var(--light-blue);
-  width: 28%;
+  width: 30%;
   .skill-text {
     margin: 0 3px;
+  }
+  @media screen and (max-width: 580px) {
+    width: 48%;
   }
 `
 const About = () => {
