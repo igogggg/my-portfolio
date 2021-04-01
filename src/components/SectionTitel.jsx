@@ -19,6 +19,12 @@ const StyledTitel = styled.h2`
     top: 55%;
     left: 150px;
   }
+  @media screen and (max-width: 768px) {
+    ::after {
+      width: 100px;
+      left: 120px;
+    }
+  }
 `
 const SectionTitel = ({ children }) => {
   return <StyledTitel>{children}</StyledTitel>
